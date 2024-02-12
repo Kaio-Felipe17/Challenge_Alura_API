@@ -23,14 +23,5 @@ namespace Depoimentos_API.Controllers
 
             return Ok(response);
         }
-
-        [HttpGet]
-        public async Task<List<DepoimentosGetDTO>> GetDepoimentos(
-            [FromBody] int? pagina)
-        {
-            var response = await _depoimentos.GetDepoimentosAsync(pagina);
-
-            return response;
-        }
     }
 }

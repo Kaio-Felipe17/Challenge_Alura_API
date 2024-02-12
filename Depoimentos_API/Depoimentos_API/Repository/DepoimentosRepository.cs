@@ -1,14 +1,16 @@
 ﻿using Depoimentos_API.Context;
 using Depoimentos_API.DTOs;
+using Depoimentos_API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Depoimentos_API.Repository
 {
     public interface IDepoimentosRepository
     {
-        Task PostDepoimentosAsync(IFormFile foto, string nome, string depoimento);
-
-        Task GetDepoimentosAsync(int? pagina);
+        Task<IActionResult> PostDepoimentosAsync(
+            IFormFile foto, 
+            string nome, 
+            string depoimento);
     }
 
     public class DepoimentosRepository
@@ -20,14 +22,21 @@ namespace Depoimentos_API.Repository
             _context = context;
         }
 
-        private async Task<IActionResult> PostDepoimentosAsync(IFormFile foto, string nome, string depoimento)
+        private async Task<IActionResult> PostDepoimentosAsync(
+            IFormFile foto, 
+            string nome, 
+            string depoimento)
         {
-            
-        }
+            var depoimentoPost = new Depoimentos
+            {
+                Foto = foto,
+                Nome = nome,
+                Depoimento = depoimento
+            };
 
-        private async Task<List<DepoimentosGetDTO>> GetDepoimentosAsync(int? pagina)
-        {
-            
+            var postResponse = await _context.Depoimentos.AddAsync(depoimentoPost);
+
+            return (IActionResult)postResponse;
         }
     }
 }

@@ -1,4 +1,6 @@
+using Depoimentos_API.Context;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,7 @@ builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString("AluraApiDatabase");
 
-builder.Services.AddDbContext<FilmeContext>(opts =>
+builder.Services.AddDbContext<DatabaseContext>(opts =>
     opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 var app = builder.Build();
