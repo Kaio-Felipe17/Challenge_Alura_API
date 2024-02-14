@@ -8,7 +8,7 @@ namespace Depoimentos_API.Models
         public int Id { get; set; }
 
         [Required]
-        public IFormFile Foto { get; set; }
+        public byte[] Foto { get; set; }
 
         [Required]
         public string Nome { get; set; }

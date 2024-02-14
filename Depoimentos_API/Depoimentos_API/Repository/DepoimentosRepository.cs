@@ -7,36 +7,35 @@ namespace Depoimentos_API.Repository
 {
     public interface IDepoimentosRepository
     {
-        Task<IActionResult> PostDepoimentosAsync(
-            IFormFile foto, 
-            string nome, 
-            string depoimento);
+        Task<IActionResult> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
     }
 
-    public class DepoimentosRepository
+    public class DepoimentosRepository : IDepoimentosRepository
     {
-        private readonly IDatabaseContext _context;
+        private readonly DatabaseContext _context;
 
-        public DepoimentosRepository(IDatabaseContext context)
+        public DepoimentosRepository(DatabaseContext context)
         {
             _context = context;
         }
 
-        private async Task<IActionResult> PostDepoimentosAsync(
-            IFormFile foto, 
-            string nome, 
-            string depoimento)
+        private async Task<IActionResult> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
         {
             var depoimentoPost = new Depoimentos
             {
-                Foto = foto,
-                Nome = nome,
-                Depoimento = depoimento
+                Foto = depoimento.Foto,
+                Nome = depoimento.Nome,
+                Depoimento = depoimento.Depoimento
             };
 
             var postResponse = await _context.Depoimentos.AddAsync(depoimentoPost);
 
             return (IActionResult)postResponse;
+        }
+
+        Task<IActionResult> IDepoimentosRepository.PostDepoimentosAsync(DepoimentosPostDTO depoimento)
+        {
+            throw new NotImplementedException();
         }
     }
 }

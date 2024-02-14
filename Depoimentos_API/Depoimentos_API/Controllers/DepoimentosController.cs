@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Depoimentos_API.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class DepoimentosController : Controller
     {
         private readonly IDepoimentosRepository _depoimentos;
@@ -14,12 +16,9 @@ namespace Depoimentos_API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostDepoimentos(
-            IFormFile foto,
-            [FromBody] string nome,
-            [FromBody] string depoimento)
+        public async Task<IActionResult> PostDepoimentos([FromBody] DepoimentosPostDTO depoimento)
         {
-            var response = await _depoimentos.PostDepoimentosAsync(foto, nome, depoimento);
+            var response = await _depoimentos.PostDepoimentosAsync(depoimento);
 
             return Ok(response);
         }
