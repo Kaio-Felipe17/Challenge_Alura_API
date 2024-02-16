@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OShABy4SfDNfpXsZp3ENNCk45gEeHpCqCa2nvmDigwVfcEFxnezHJee1pI/8Mu5ylK9E9dkxP1TOLkZ6cF6o5A==",
+  "dgSpecHash": "iSzOik5SyukJXRrHyTHF9wSoJzbI/JVEA4BddN4GY4eJl/0hthRh2QekjFCFszsEQYzCezVvuulbCAa+TNnzPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\kaio0\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\kaio0\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kaio0\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.0\\microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
     "C:\\Users\\kaio0\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.0\\microsoft.entityframeworkcore.abstractions.6.0.0.nupkg.sha512",

@@ -1,4 +1,5 @@
-﻿using Depoimentos_API.Context;
+﻿using AutoMapper;
+using Depoimentos_API.Context;
 using Depoimentos_API.DTOs;
 using Depoimentos_API.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,35 +8,28 @@ namespace Depoimentos_API.Repository
 {
     public interface IDepoimentosRepository
     {
-        Task<IActionResult> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
+        Task<string> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
     {
         private readonly DatabaseContext _context;
+        private readonly IMapper _mapper;
 
-        public DepoimentosRepository(DatabaseContext context)
+        public DepoimentosRepository(DatabaseContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        private async Task<IActionResult> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
+        public async Task<string> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
         {
-            var depoimentoPost = new Depoimentos
-            {
-                Foto = depoimento.Foto,
-                Nome = depoimento.Nome,
-                Depoimento = depoimento.Depoimento
-            };
+            var depoimentoPost = _mapper.Map<Depoimentos>(depoimento);
 
-            var postResponse = await _context.Depoimentos.AddAsync(depoimentoPost);
+            await _context.Depoimentos.AddAsync(depoimentoPost);
+            await _context.SaveChangesAsync();
 
-            return (IActionResult)postResponse;
-        }
-
-        Task<IActionResult> IDepoimentosRepository.PostDepoimentosAsync(DepoimentosPostDTO depoimento)
-        {
-            throw new NotImplementedException();
+            return $"Depoimento de {depoimentoPost.Nome} inserido com sucesso";
         }
     }
 }

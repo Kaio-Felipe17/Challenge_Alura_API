@@ -16,6 +16,7 @@ namespace Depoimentos_API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> PostDepoimentos([FromBody] DepoimentosPostDTO depoimento)
         {
             var response = await _depoimentos.PostDepoimentosAsync(depoimento);
