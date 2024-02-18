@@ -23,5 +23,23 @@ namespace Depoimentos_API.Controllers
 
             return Ok(response);
         }
+
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<DepoimentosGetDTO> GetDepoimentos([FromQuery] int id)
+        {
+            var response = await _depoimentos.GetDepoimentosAsync(id);
+
+            return response;
+        }
+
+        [HttpPut]
+        public async Task PutDepoimentos([FromQuery] DepoimentosPutDTO dto)
+        {
+            var response = await _depoimentos.PutDepoimentosAsync(dto);
+
+            return response;
+        }
     }
 }

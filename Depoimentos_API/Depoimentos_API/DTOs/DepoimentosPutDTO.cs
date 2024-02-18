@@ -1,6 +1,6 @@
 ﻿namespace Depoimentos_API.DTOs
 {
-    public class DepoimentosGetDTO
+    public class DepoimentosPutDTO
     {
         public int Id { get; set; }
         public string Foto { get; set; }

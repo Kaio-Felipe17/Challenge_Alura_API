@@ -3,12 +3,17 @@ using Depoimentos_API.Context;
 using Depoimentos_API.DTOs;
 using Depoimentos_API.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Depoimentos_API.Repository
 {
     public interface IDepoimentosRepository
     {
         Task<string> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
+
+        Task<DepoimentosGetDTO> GetDepoimentosAsync(int id);
+
+        Task PutDepoimentosAsync(DepoimentosPutDTO dto);
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
@@ -29,7 +34,37 @@ namespace Depoimentos_API.Repository
             await _context.Depoimentos.AddAsync(depoimentoPost);
             await _context.SaveChangesAsync();
 
-            return $"Depoimento de {depoimentoPost.Nome} inserido com sucesso";
+            return $"Depoimento de {depoimentoPost.Nome} inserido com sucesso.";
+        }
+
+        public async Task<DepoimentosGetDTO> GetDepoimentosAsync(int id)
+        {
+            var query = await (
+                from a in _context.Depoimentos
+                .Where(a => a.Id == id)
+
+                select new DepoimentosGetDTO
+                {
+                    Id = a.Id,
+                    Foto = Convert.ToBase64String(a.Foto),
+                    Nome = a.Nome,
+                    Depoimento = a.Depoimento
+                })
+                .FirstOrDefaultAsync();
+
+            return query;
+        }
+
+        public async Task PutDepoimentosAsync(DepoimentosPutDTO dto)
+        {
+            var verifyId = await (
+                from a in _context.Depoimentos.Where(a => a.Id == dto.Id)
+                select a.Id).FirstOrDefaultAsync();
+
+            if (verifyId == default) 
+                throw new BadHttpRequestException($"Id '{dto.Id}' inexistente.");
+
+
         }
     }
 }

@@ -3,7 +3,7 @@ using Depoimentos_API.Models;
 
 namespace Depoimentos_API.Profile
 {
-    public class Profiles : Profile
+    public class Profiles : AutoMapper.Profile
     {
         public Profiles()
         {
