@@ -2,6 +2,7 @@
 using Depoimentos_API.Context;
 using Depoimentos_API.DTOs;
 using Depoimentos_API.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,7 +14,7 @@ namespace Depoimentos_API.Repository
 
         Task<DepoimentosGetDTO> GetDepoimentosAsync(int id);
 
-        Task PutDepoimentosAsync(DepoimentosPutDTO dto);
+        Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto);
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
@@ -55,16 +56,25 @@ namespace Depoimentos_API.Repository
             return query;
         }
 
-        public async Task PutDepoimentosAsync(DepoimentosPutDTO dto)
+        public async Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto)
         {
-            var verifyId = await (
+            var depoiment = await (
                 from a in _context.Depoimentos.Where(a => a.Id == dto.Id)
-                select a.Id).FirstOrDefaultAsync();
+                select new Depoimentos
+                {
+                    Id = a.Id,
+                    Foto = a.Foto,
+                    Nome = a.Nome,
+                    Depoimento = a.Depoimento
+                })
+                .FirstOrDefaultAsync();
 
-            if (verifyId == default) 
+            if (depoiment == default) 
                 throw new BadHttpRequestException($"Id '{dto.Id}' inexistente.");
 
-
+            _mapper.Map(dto, depoiment);
+            await _context.SaveChangesAsync();
+            return $"Id {dto.Id} atualizado com sucesso.";
         }
     }
 }

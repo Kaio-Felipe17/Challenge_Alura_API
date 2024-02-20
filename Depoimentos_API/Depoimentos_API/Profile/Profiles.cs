@@ -8,6 +8,7 @@ namespace Depoimentos_API.Profile
         public Profiles()
         {
             CreateMap<DepoimentosPostDTO, Depoimentos>();
+            CreateMap<DepoimentosPutDTO, Depoimentos>();
         }
     }
 }

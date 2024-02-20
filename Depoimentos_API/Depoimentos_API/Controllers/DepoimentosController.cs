@@ -35,7 +35,7 @@ namespace Depoimentos_API.Controllers
         }
 
         [HttpPut]
-        public async Task PutDepoimentos([FromQuery] DepoimentosPutDTO dto)
+        public async Task<string> PutDepoimentos([FromBody] DepoimentosPutDTO dto)
         {
             var response = await _depoimentos.PutDepoimentosAsync(dto);
 
