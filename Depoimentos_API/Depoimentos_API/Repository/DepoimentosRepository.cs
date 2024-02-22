@@ -58,16 +58,7 @@ namespace Depoimentos_API.Repository
 
         public async Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto)
         {
-            var depoiment = await (
-                from a in _context.Depoimentos.Where(a => a.Id == dto.Id)
-                select new Depoimentos
-                {
-                    Id = a.Id,
-                    Foto = a.Foto,
-                    Nome = a.Nome,
-                    Depoimento = a.Depoimento
-                })
-                .FirstOrDefaultAsync();
+            var depoiment = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == dto.Id);
 
             if (depoiment == default) 
                 throw new BadHttpRequestException($"Id '{dto.Id}' inexistente.");
