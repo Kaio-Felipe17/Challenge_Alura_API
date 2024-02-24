@@ -1,0 +1,5 @@
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos.Application\obj\Debug\net7.0\Depoimentos_API.Application.csproj.AssemblyReference.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos.Application\obj\Debug\net7.0\Depoimentos_API.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos.Application\obj\Debug\net7.0\Depoimentos_API.Application.AssemblyInfoInputs.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos.Application\obj\Debug\net7.0\Depoimentos_API.Application.AssemblyInfo.cs
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos.Application\obj\Debug\net7.0\Depoimentos_API.Application.csproj.CoreCompileInputs.cache

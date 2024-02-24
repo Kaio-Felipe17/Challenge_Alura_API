@@ -1,8 +1,7 @@
-﻿using Depoimentos_API.DTOs;
-using Depoimentos_API.Repository;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Depoimentos_API.Application.DTOs;
 
-namespace Depoimentos_API.Controllers
+namespace Depoimentos_API.Api
 {
     [ApiController]
     [Route("[controller]")]

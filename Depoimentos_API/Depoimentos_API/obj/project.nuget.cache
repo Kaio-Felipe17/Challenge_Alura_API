@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iSzOik5SyukJXRrHyTHF9wSoJzbI/JVEA4BddN4GY4eJl/0hthRh2QekjFCFszsEQYzCezVvuulbCAa+TNnzPA==",
+  "dgSpecHash": "kg6ckek3TGN//T8I6NoLzDvAXUYBYq3Ok0r8UENsvBSt+fgWbOu02QyVn6E7i4cY14wCpMotczl4/zkv+ru4MA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.csproj",
+  "projectFilePath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaio0\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\kaio0\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

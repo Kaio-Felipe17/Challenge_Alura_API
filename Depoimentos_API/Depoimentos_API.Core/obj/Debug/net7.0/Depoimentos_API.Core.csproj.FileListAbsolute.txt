@@ -1,0 +1,15 @@
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\bin\Debug\net7.0\Depoimentos_API.Core.exe
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\bin\Debug\net7.0\Depoimentos_API.Core.deps.json
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\bin\Debug\net7.0\Depoimentos_API.Core.runtimeconfig.json
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\bin\Debug\net7.0\Depoimentos_API.Core.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\bin\Debug\net7.0\Depoimentos_API.Core.pdb
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.csproj.AssemblyReference.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.AssemblyInfoInputs.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.AssemblyInfo.cs
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.csproj.CoreCompileInputs.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\refint\Depoimentos_API.Core.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.pdb
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\Depoimentos_API.Core.genruntimeconfig.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Depoimentos_API\Depoimentos_API.Core\obj\Debug\net7.0\ref\Depoimentos_API.Core.dll

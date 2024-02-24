@@ -893,9 +893,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.csproj",
-      "projectName": "Depoimentos_API",
-      "projectPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.csproj",
+      "projectUniqueName": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.API.csproj",
+      "projectName": "Depoimentos_API.API",
+      "projectPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\Depoimentos_API.API.csproj",
       "packagesPath": "C:\\Users\\kaio0\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Depoimentos_API\\Depoimentos_API\\obj\\",
       "projectStyle": "PackageReference",

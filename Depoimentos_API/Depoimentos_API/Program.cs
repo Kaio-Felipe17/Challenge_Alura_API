@@ -1,5 +1,5 @@
-using Depoimentos_API.Context;
-using Depoimentos_API.Repository;
+using Depoimentos_API.Api.Context;
+using Depoimentos_API.Application.Repository;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 
