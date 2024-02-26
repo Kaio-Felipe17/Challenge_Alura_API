@@ -1,0 +1,8 @@
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.csproj.AssemblyReference.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.AssemblyInfoInputs.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.AssemblyInfo.cs
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.csproj.CoreCompileInputs.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.RazorAssemblyInfo.cache
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\Alura_Api\Alura_Api\obj\Debug\net7.0\Alura_Api.Api.RazorAssemblyInfo.cs
