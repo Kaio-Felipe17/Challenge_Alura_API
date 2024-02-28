@@ -587,6 +587,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Alura_API.Infrastructure": "1.0.0",
           "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Server.Kestrel.Core": "2.2.0"
         },
@@ -1426,7 +1427,7 @@
       "projectName": "Alura_API.Infrastructure",
       "projectPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Alura_Api\\Alura_API.Infrastructure\\Alura_API.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\kaio0\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Alura_Api\\Alura_API.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Alura_API\\Alura_API.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kaio0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1483,5 +1484,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1108",
+      "level": "Error",
+      "message": "Ciclo detectado. \r\n  Alura_API.Infrastructure -> Alura_API.Application -> Alura_API.Infrastructure.",
+      "libraryId": "Alura_API.Infrastructure",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

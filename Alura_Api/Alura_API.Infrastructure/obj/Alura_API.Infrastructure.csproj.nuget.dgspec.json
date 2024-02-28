@@ -27,7 +27,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Alura_Api\\Alura_API.Infrastructure\\Alura_API.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\Alura_Api\\Alura_API.Infrastructure\\Alura_API.Infrastructure.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

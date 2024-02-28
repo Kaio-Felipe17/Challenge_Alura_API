@@ -1,8 +1,9 @@
 ﻿using Alura_API.Application.DTOs;
 using Alura_API.Application.Models;
+using Alura_API.Infrastructure.Context;
 using AutoMapper;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Alura_API.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Alura_API.Application.Repository
 {
@@ -15,7 +16,7 @@ namespace Alura_API.Application.Repository
         Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto);
     }
 
-    public class DepoimentosRepository
+    public class DepoimentosRepository : IDepoimentosRepository
     {
         private readonly DatabaseContext _context;
         private readonly IMapper _mapper;
@@ -38,9 +39,7 @@ namespace Alura_API.Application.Repository
 
         public async Task<DepoimentosGetDTO> GetDepoimentosAsync(int id)
         {
-            var query = await (
-                from a in _context.Depoimentos
-                .Where(a => a.Id == id)
+            var query = await (from a in _context.Depoimentos.Where(a => a.Id == id)
 
                 select new DepoimentosGetDTO
                 {
@@ -59,7 +58,7 @@ namespace Alura_API.Application.Repository
             var depoiment = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == dto.Id);
 
             if (depoiment == default)
-                throw new BadHttpRequestException($"Id '{dto.Id}' inexistente.");
+                throw new Exception($"ID {dto.Id} inexistente.");
 
             _mapper.Map(dto, depoiment);
             await _context.SaveChangesAsync();

@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
 
 var connectionString = builder.Configuration.GetConnectionString("AluraApiDatabase");
 
@@ -12,8 +13,6 @@ builder.Services
     .AddDbContext<DatabaseContext>(opts => opts
     .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
-builder.Services
-    .AddScoped<IDepoimentosRepository, DepoimentosRepository>();
 
 var app = builder.Build();
 
