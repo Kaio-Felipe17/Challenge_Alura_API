@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "SUMpMP8+nePV/2N2nhEExNY6Aqu7X5M0JHKlBzSVOYN82K7G60Y7DgEFBgazr7AibTOfwaZxLLjGC/Qe3Iud+Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kaio0\\OneDrive\\Desktop\\projetos\\Challenge_Alura_API\\API_Alura\\API_Alura.Application\\API_Alura.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kaio0\\.nuget\\packages\\automapper\\7.0.1\\automapper.7.0.1.nupkg.sha512",
+    "C:\\Users\\kaio0\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
