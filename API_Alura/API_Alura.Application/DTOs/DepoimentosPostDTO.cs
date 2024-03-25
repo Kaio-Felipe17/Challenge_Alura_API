@@ -2,8 +2,8 @@
 {
     public class DepoimentosPostDTO
     {
-        public required byte[] Foto { get; set; }
-        public required string Nome { get; set; }
-        public required string Depoimento { get; set; }
+        public byte[] Foto { get; set; }
+        public string Nome { get; set; }
+        public string Depoimento { get; set; }
     }
 }

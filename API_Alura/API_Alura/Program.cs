@@ -1,5 +1,6 @@
 using API_Alura.Core.Repository;
 using API_Alura.Infrastructure.Context;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
 
-var connectionString = builder.Configuration.GetConnectionString("AluraApiDatabase");
+var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
 
 builder.Services
     .AddDbContext<DatabaseContext>(opts => opts
