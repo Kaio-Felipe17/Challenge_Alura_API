@@ -1,3 +1,4 @@
+using API_Alura.Application.Profile;
 using API_Alura.Core.Repository;
 using API_Alura.Infrastructure.Context;
 using AutoMapper;
@@ -7,8 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
+
+var mappingConfig = new MapperConfiguration(mc =>
+{
+    mc.AddProfile(new Profiles());
+});
+
+IMapper mapper = mappingConfig.CreateMapper();
+
+builder.Services.AddSingleton(mapper);
 
 var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
 

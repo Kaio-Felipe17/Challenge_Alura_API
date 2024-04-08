@@ -13,6 +13,8 @@ namespace API_Alura.Core.Repository
         Task<DepoimentosGetDTO> GetDepoimentosAsync(int id);
 
         Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto);
+
+        Task<string> DeleteDepoimentosAsync(int id);
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
@@ -30,7 +32,7 @@ namespace API_Alura.Core.Repository
         {
             var depoimentoPost = _mapper.Map<Depoimentos>(depoimento);
 
-            await _context.Depoimentos.AddAsync(depoimentoPost);
+            _context.Depoimentos.Add(depoimentoPost);
             await _context.SaveChangesAsync();
 
             return $"Depoimento de {depoimentoPost.Nome} inserido com sucesso.";
@@ -40,13 +42,13 @@ namespace API_Alura.Core.Repository
         {
             var query = await (from a in _context.Depoimentos.Where(a => a.Id == id)
 
-                               select new DepoimentosGetDTO
-                               {
-                                   Id = a.Id,
-                                   Foto = Convert.ToBase64String(a.Foto),
-                                   Nome = a.Nome,
-                                   Depoimento = a.Depoimento
-                               })
+                select new DepoimentosGetDTO
+                {
+                    Id = a.Id,
+                    Foto = Convert.ToBase64String(a.Foto),
+                    Nome = a.Nome,
+                    Depoimento = a.Depoimento
+                })
                 .FirstOrDefaultAsync();
 
             return query;
@@ -56,12 +58,27 @@ namespace API_Alura.Core.Repository
         {
             var depoiment = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == dto.Id);
 
-            if (depoiment == default)
-                throw new Exception($"ID {dto.Id} inexistente.");
+            if (depoiment == default) throw new Exception($"ID {dto.Id} inexistente.");
 
             _mapper.Map(dto, depoiment);
+
             await _context.SaveChangesAsync();
+
             return $"Id {dto.Id} atualizado com sucesso.";
+        }
+
+        public async Task<string> DeleteDepoimentosAsync(int id)
+        {
+            var depoimentToDelete = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == id);
+
+            if (depoimentToDelete != default)
+            {
+                _context.Depoimentos.Remove(depoimentToDelete);
+                await _context.SaveChangesAsync();
+            }
+            else throw new Exception($"ID {id} inexistente.");
+
+            return $"Registro deletado com sucesso";
         }
     }
 }

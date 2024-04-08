@@ -36,3 +36,9 @@ C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\obj\Debug\net6.0\API_Alura.Infrastructure.pdb
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\obj\Debug\net6.0\API_Alura.Infrastructure.genruntimeconfig.cache
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\obj\Debug\net6.0\ref\API_Alura.Infrastructure.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.AspNetCore.Http.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Infrastructure\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
