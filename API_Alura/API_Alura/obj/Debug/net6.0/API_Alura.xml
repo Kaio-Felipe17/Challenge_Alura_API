@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>API_Alura</name>
+    </assembly>
+    <members>
+        <member name="M:API_Alura.Controllers.DepoimentosController.PostDepoimentos(API_Alura.Application.DTOs.DepoimentosPostDTO)">
+            <summary>
+            Insere um novo depoimento.
+            </summary>
+            <param name="depoimento">Objeto para inserção</param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Alura.Controllers.DepoimentosController.GetDepoimentos(System.Int32)">
+            <summary>
+            Consulta um depoimento.
+            </summary>
+            <param name="id">Id do depoimento</param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Alura.Controllers.DepoimentosController.PutDepoimentos(API_Alura.Application.DTOs.DepoimentosPutDTO)">
+            <summary>
+            Atualiza um depoimento existente.
+            </summary>
+            <param name="dto">Objeto para atualização</param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Alura.Controllers.DepoimentosController.DeleteDepoimentos(System.Int32)">
+            <summary>
+            Deleta um depoimento existente.
+            </summary>
+            <param name="id">Id do depoimento</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
