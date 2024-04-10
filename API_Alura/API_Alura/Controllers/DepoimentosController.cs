@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace API_Alura.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("depoimentos")]
 public class DepoimentosController : ControllerBase
 {
     private readonly IDepoimentosRepository _depoimentos;
@@ -24,12 +24,11 @@ public class DepoimentosController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> PostDepoimentos(
-        [FromBody] DepoimentosPostDTO depoimento)
+    public async Task<IActionResult> PostDepoimentos([FromBody] DepoimentosPostDTO depoimento)
     {
         var response = await _depoimentos.PostDepoimentosAsync(depoimento);
 
-        return Ok(response);
+        return CreatedAtAction(nameof(GetDepoimentos), new { id = response.Id }, response);
     }
 
     /// <summary>

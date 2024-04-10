@@ -8,7 +8,7 @@ namespace API_Alura.Core.Repository
 {
     public interface IDepoimentosRepository
     {
-        Task<string> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
+        Task<Depoimentos> PostDepoimentosAsync(DepoimentosPostDTO depoimento);
 
         Task<DepoimentosGetDTO> GetDepoimentosAsync(int id);
 
@@ -28,14 +28,14 @@ namespace API_Alura.Core.Repository
             _mapper = mapper;
         }
 
-        public async Task<string> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
+        public async Task<Depoimentos> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
         {
             var depoimentoPost = _mapper.Map<Depoimentos>(depoimento);
 
             _context.Depoimentos.Add(depoimentoPost);
             await _context.SaveChangesAsync();
 
-            return $"Depoimento de {depoimentoPost.Nome} inserido com sucesso.";
+            return depoimentoPost;
         }
 
         public async Task<DepoimentosGetDTO> GetDepoimentosAsync(int id)
