@@ -12,9 +12,11 @@ namespace API_Alura.Core.Repository
 
         Task<DepoimentosGetDTO> GetDepoimentosAsync(int id);
 
-        Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto);
+        Task<DepoimentosPutDTO> PutDepoimentosAsync(DepoimentosPutDTO dto);
 
-        Task<string> DeleteDepoimentosAsync(int id);
+        Task<bool> DeleteDepoimentosAsync(int id);
+
+        Task<List<DepoimentosRandomGetDTO>> GetDepoimentosAleatoriosAsync();
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
@@ -54,7 +56,7 @@ namespace API_Alura.Core.Repository
             return query;
         }
 
-        public async Task<string> PutDepoimentosAsync(DepoimentosPutDTO dto)
+        public async Task<DepoimentosPutDTO> PutDepoimentosAsync(DepoimentosPutDTO dto)
         {
             var depoiment = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == dto.Id);
 
@@ -64,10 +66,10 @@ namespace API_Alura.Core.Repository
 
             await _context.SaveChangesAsync();
 
-            return $"Id {dto.Id} atualizado com sucesso.";
+            return dto;
         }
 
-        public async Task<string> DeleteDepoimentosAsync(int id)
+        public async Task<bool> DeleteDepoimentosAsync(int id)
         {
             var depoimentToDelete = await _context.Depoimentos.FirstOrDefaultAsync(a => a.Id == id);
 
@@ -75,10 +77,29 @@ namespace API_Alura.Core.Repository
             {
                 _context.Depoimentos.Remove(depoimentToDelete);
                 await _context.SaveChangesAsync();
+                return true;
             }
             else throw new Exception($"ID {id} inexistente.");
+        }
 
-            return $"Registro deletado com sucesso";
+        public async Task<List<DepoimentosRandomGetDTO>> GetDepoimentosAleatoriosAsync()
+        {
+            var randomDepoiments = new List<DepoimentosRandomGetDTO>();
+
+            for (int i = 1; i <= 3; i++)
+            {
+                var depoimentsCounting = await _context.Depoimentos.CountAsync();
+
+                var randomNumber = new Random().Next(0, depoimentsCounting);
+
+                var query = await _context.Depoimentos.Where(x => x.Id == randomNumber).FirstOrDefaultAsync();
+
+                var randomDepoimentMapping = _mapper.Map<Depoimentos, DepoimentosRandomGetDTO>(query);
+
+                randomDepoiments.Add(randomDepoimentMapping);
+            }
+
+            return randomDepoiments;
         }
     }
 }

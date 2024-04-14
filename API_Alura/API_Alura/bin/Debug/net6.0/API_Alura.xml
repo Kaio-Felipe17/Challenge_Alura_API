@@ -32,5 +32,11 @@
             <param name="id">Id do depoimento</param>
             <returns></returns>
         </member>
+        <member name="M:API_Alura.Controllers.DepoimentosController.GetDepoimentosAleatorios">
+            <summary>
+            Retorna 3 depoimentos de forma aleatória.
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -53,13 +53,13 @@ public class DepoimentosController : ControllerBase
     /// <param name="dto">Objeto para atualização</param>
     /// <returns></returns>
     [HttpPut("atualizaDepoimento")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(DepoimentosPutDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<string> PutDepoimentos([FromBody] DepoimentosPutDTO dto)
+    public async Task<IActionResult> PutDepoimentos([FromBody] DepoimentosPutDTO dto)
     {
         var response = await _depoimentos.PutDepoimentosAsync(dto);
 
-        return response;
+        return Ok(response);
     }
 
     /// <summary>
@@ -74,6 +74,19 @@ public class DepoimentosController : ControllerBase
     public async Task<IActionResult> DeleteDepoimentos([FromQuery] int id)
     {
         var response = await _depoimentos.DeleteDepoimentosAsync(id);
+
+        return Ok(response);
+    }
+
+    /// <summary>
+    /// Retorna 3 depoimentos de forma aleatória.
+    /// </summary>
+    /// <returns></returns>
+    [HttpGet("depoimentos-home")]
+    [ProducesResponseType(typeof(List<DepoimentosRandomGetDTO>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> GetDepoimentosAleatorios()
+    {
+        var response = await _depoimentos.GetDepoimentosAleatoriosAsync();
 
         return Ok(response);
     }

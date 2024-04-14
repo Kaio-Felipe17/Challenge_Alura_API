@@ -11,7 +11,11 @@ namespace API_Alura.Application.Profile
             CreateMap<DepoimentosPostDTO, Depoimentos>()
                 .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto)));
 
-            CreateMap<DepoimentosPutDTO, Depoimentos>();
+            CreateMap<DepoimentosPutDTO, Depoimentos>()
+                .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto)));
+
+            CreateMap<Depoimentos, DepoimentosRandomGetDTO>()
+                .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.ToBase64String(src.Foto)));
         }
     }
 }
