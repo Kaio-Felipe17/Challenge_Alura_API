@@ -47,3 +47,6 @@ C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.Extensions.ObjectPool.dll
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.Net.Http.Headers.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.AspNetCore.Cors.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura.Core\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll

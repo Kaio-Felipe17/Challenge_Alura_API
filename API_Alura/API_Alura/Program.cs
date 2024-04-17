@@ -12,6 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
 
+var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
+
+builder.Services
+    .AddDbContext<DatabaseContext>(opts => opts
+    .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
 var mappingConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new Profiles());
@@ -21,11 +27,15 @@ IMapper mapper = mappingConfig.CreateMapper();
 
 builder.Services.AddSingleton(mapper);
 
-var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    {
+        builder.WithOrigins("*");
+    });
+});
 
-builder.Services
-    .AddDbContext<DatabaseContext>(opts => opts
-    .UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -49,7 +59,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseRouting();
+
+app.UseCors("CorsPolicy");
+
 app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.MapControllers();
 

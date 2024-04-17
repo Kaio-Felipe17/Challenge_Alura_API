@@ -89,13 +89,9 @@ namespace API_Alura.Core.Repository
             for (int i = 1; i <= 3; i++)
             {
                 var depoimentsCounting = await _context.Depoimentos.CountAsync();
-
                 var randomNumber = new Random().Next(0, depoimentsCounting);
-
                 var query = await _context.Depoimentos.Where(x => x.Id == randomNumber).FirstOrDefaultAsync();
-
                 var randomDepoimentMapping = _mapper.Map<Depoimentos, DepoimentosRandomGetDTO>(query);
-
                 randomDepoiments.Add(randomDepoimentMapping);
             }
 
