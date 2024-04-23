@@ -1,4 +1,5 @@
-﻿using API_Alura.Application.DTOs;
+﻿using API_Alura.Application.DTOs.Request;
+using API_Alura.Application.DTOs.Response;
 using API_Alura.Core.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -83,7 +84,7 @@ public class DepoimentosController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpGet("depoimentos-home")]
-    [ProducesResponseType(typeof(List<DepoimentosRandomGetDTO>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(List<DepoimentosAleatoriosGetDTO>), StatusCodes.Status200OK)]
     public async Task<IActionResult> GetDepoimentosAleatorios()
     {
         var response = await _depoimentos.GetDepoimentosAleatoriosAsync();

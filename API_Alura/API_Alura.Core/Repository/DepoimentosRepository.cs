@@ -1,4 +1,5 @@
-﻿using API_Alura.Application.DTOs;
+﻿using API_Alura.Application.DTOs.Request;
+using API_Alura.Application.DTOs.Response;
 using API_Alura.Application.Models;
 using API_Alura.Infrastructure.Context;
 using AutoMapper;
@@ -16,7 +17,7 @@ namespace API_Alura.Core.Repository
 
         Task<bool> DeleteDepoimentosAsync(int id);
 
-        Task<List<DepoimentosRandomGetDTO>> GetDepoimentosAleatoriosAsync();
+        Task<List<DepoimentosAleatoriosGetDTO>> GetDepoimentosAleatoriosAsync();
     }
 
     public class DepoimentosRepository : IDepoimentosRepository
@@ -32,7 +33,7 @@ namespace API_Alura.Core.Repository
 
         public async Task<Depoimentos> PostDepoimentosAsync(DepoimentosPostDTO depoimento)
         {
-            var depoimentoPost = _mapper.Map<Depoimentos>(depoimento);
+            var depoimentoPost = _mapper.Map<DepoimentosPostDTO, Depoimentos>(depoimento);
 
             _context.Depoimentos.Add(depoimentoPost);
             await _context.SaveChangesAsync();
@@ -82,16 +83,16 @@ namespace API_Alura.Core.Repository
             else throw new Exception($"ID {id} inexistente.");
         }
 
-        public async Task<List<DepoimentosRandomGetDTO>> GetDepoimentosAleatoriosAsync()
+        public async Task<List<DepoimentosAleatoriosGetDTO>> GetDepoimentosAleatoriosAsync()
         {
-            var randomDepoiments = new List<DepoimentosRandomGetDTO>();
+            var randomDepoiments = new List<DepoimentosAleatoriosGetDTO>();
 
             for (int i = 1; i <= 3; i++)
             {
                 var depoimentsCounting = await _context.Depoimentos.CountAsync();
                 var randomNumber = new Random().Next(0, depoimentsCounting);
                 var query = await _context.Depoimentos.Where(x => x.Id == randomNumber).FirstOrDefaultAsync();
-                var randomDepoimentMapping = _mapper.Map<Depoimentos, DepoimentosRandomGetDTO>(query);
+                var randomDepoimentMapping = _mapper.Map<Depoimentos, DepoimentosAleatoriosGetDTO>(query);
                 randomDepoiments.Add(randomDepoimentMapping);
             }
 

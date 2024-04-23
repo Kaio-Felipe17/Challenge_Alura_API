@@ -41,6 +41,28 @@ namespace API_Alura.Infrastructure.Migrations
 
                     b.ToTable("Depoimentos");
                 });
+
+            modelBuilder.Entity("API_Alura.Application.Models.Destinos", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<byte[]>("Foto")
+                        .IsRequired()
+                        .HasColumnType("longblob");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("Preco")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Destinos");
+                });
 #pragma warning restore 612, 618
         }
     }
