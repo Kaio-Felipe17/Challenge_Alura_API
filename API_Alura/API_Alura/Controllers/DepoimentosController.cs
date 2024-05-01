@@ -2,6 +2,7 @@
 using API_Alura.Application.DTOs.Response;
 using API_Alura.Core.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace API_Alura.Controllers;
 
@@ -25,11 +26,13 @@ public class DepoimentosController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> PostDepoimentos([FromBody] DepoimentosPostDTO depoimento)
+    public async Task<IActionResult> InserirDepoimento([FromBody] InsereDepoimentoRequestDTO depoimento)
     {
-        var response = await _depoimentos.PostDepoimentosAsync(depoimento);
+        if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        return CreatedAtAction(nameof(GetDepoimentos), new { id = response.Id }, response);
+        var response = await _depoimentos.InserirDepoimentoAsync(depoimento);
+
+        return CreatedAtAction(nameof(ConsultaDepoimento), new { id = response.Id }, response);
     }
 
     /// <summary>
@@ -41,9 +44,9 @@ public class DepoimentosController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<DepoimentosGetDTO> GetDepoimentos([FromQuery] int id)
+    public async Task<ConsultaDepoimentoResponseDTO> ConsultaDepoimento([FromQuery][Required] int id)
     {
-        var response = await _depoimentos.GetDepoimentosAsync(id);
+        var response = await _depoimentos.ConsultaDepoimentoAsync(id);
 
         return response;
     }
@@ -54,11 +57,11 @@ public class DepoimentosController : ControllerBase
     /// <param name="dto">Objeto para atualização</param>
     /// <returns></returns>
     [HttpPut("atualizaDepoimento")]
-    [ProducesResponseType(typeof(DepoimentosPutDTO), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(AtualizaDepoimentoRequestDTO), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> PutDepoimentos([FromBody] DepoimentosPutDTO dto)
+    public async Task<IActionResult> AtualizaDepoimento([FromBody] AtualizaDepoimentoRequestDTO dto)
     {
-        var response = await _depoimentos.PutDepoimentosAsync(dto);
+        var response = await _depoimentos.AtualizaDepoimentoAsync(dto);
 
         return Ok(response);
     }
@@ -72,9 +75,9 @@ public class DepoimentosController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> DeleteDepoimentos([FromQuery] int id)
+    public async Task<IActionResult> DeletaDepoimento([FromQuery] int id)
     {
-        var response = await _depoimentos.DeleteDepoimentosAsync(id);
+        var response = await _depoimentos.DeletaDepoimentoAsync(id);
 
         return Ok(response);
     }
@@ -84,10 +87,10 @@ public class DepoimentosController : ControllerBase
     /// </summary>
     /// <returns></returns>
     [HttpGet("depoimentos-home")]
-    [ProducesResponseType(typeof(List<DepoimentosAleatoriosGetDTO>), StatusCodes.Status200OK)]
-    public async Task<IActionResult> GetDepoimentosAleatorios()
+    [ProducesResponseType(typeof(List<BuscaDepoimentosAleatoriosResponseDTO>), StatusCodes.Status200OK)]
+    public async Task<IActionResult> BuscaDepoimentosAleatorios()
     {
-        var response = await _depoimentos.GetDepoimentosAleatoriosAsync();
+        var response = await _depoimentos.BuscaDepoimentosAleatoriosAsync();
 
         return Ok(response);
     }

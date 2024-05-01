@@ -21,7 +21,7 @@ builder.Services
 
 var mappingConfig = new MapperConfiguration(mc =>
 {
-    mc.AddProfile(new Profiles());
+    mc.AddProfile(new MappingProfiles());
 });
 
 IMapper mapper = mappingConfig.CreateMapper();

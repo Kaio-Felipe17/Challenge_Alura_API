@@ -47,9 +47,23 @@
         </member>
         <member name="M:API_Alura.Controllers.DestinosController.GetDestino(System.String)">
             <summary>
-            Retorna um destino.
+            Consulta um destino.
             </summary>
             <param name="nome">Nome do destino</param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Alura.Controllers.DestinosController.PutDestino(API_Alura.Application.DTOs.Request.DestinosPutDTO)">
+            <summary>
+            Atualiza um destino.
+            </summary>
+            <param name="dto">Objeto para atualização</param>
+            <returns></returns>
+        </member>
+        <member name="M:API_Alura.Controllers.DestinosController.DeleteDestino(System.Int32)">
+            <summary>
+            Exclui um destino.
+            </summary>
+            <param name="id">Id do destino</param>
             <returns></returns>
         </member>
     </members>

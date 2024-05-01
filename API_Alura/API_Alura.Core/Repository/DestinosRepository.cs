@@ -8,8 +8,10 @@ namespace API_Alura.Core.Repository
 {
     public interface IDestinosRepository
     {
-        Task<Destinos> PostDestinosAsync(DestinosPostDTO dto);
-        Task<Destinos?> GetDestinoAsync(string nome);
+        Task<Destino> InsereDestinoAsync(InsereDestinoRequestDTO dto);
+        Task<Destino?> ConsultaDestinoAsync(string nome);
+        Task<Destino> AtualizaDestinoAsync(AtualizaDestinoRequestDTO dto);
+        Task<bool> DeletaDestinoAsync(int id);
     }
     public class DestinosRepository : IDestinosRepository
     {
@@ -22,23 +24,47 @@ namespace API_Alura.Core.Repository
             _context = context;
         }
 
-        public async Task<Destinos> PostDestinosAsync(DestinosPostDTO dto)
+        public async Task<Destino> InsereDestinoAsync(InsereDestinoRequestDTO dto)
         {
-            var destinoPost = _mapper.Map<DestinosPostDTO, Destinos>(dto);
+            var destinoMap = _mapper.Map<InsereDestinoRequestDTO, Destino>(dto);
 
-            _context.Destinos.Add(destinoPost);
+            _context.Destinos.Add(destinoMap);
             await _context.SaveChangesAsync();
 
-            return destinoPost;
+            return destinoMap;
         }
 
-        public async Task<Destinos?> GetDestinoAsync(string nome)
+        public async Task<Destino?> ConsultaDestinoAsync(string nome)
         {
             var destino = await _context.Destinos.Where(x => x.Nome == nome).FirstOrDefaultAsync();
 
-            if (destino == default) throw new Exception("Nenhum destino foi encontrado");
+            if (destino == default) throw new Exception("Nenhum destino foi encontrado.");
 
             return destino;
+        }
+
+        public async Task<Destino> AtualizaDestinoAsync(AtualizaDestinoRequestDTO dto)
+        {
+            var destiny = await _context.Destinos.Where(x => x.Id == dto.Id).FirstOrDefaultAsync();
+
+            if (destiny == default) throw new Exception($"Id {dto.Id} inexistente.");
+
+            _mapper.Map(dto, destiny);
+            await _context.SaveChangesAsync();
+
+            return destiny;
+        }
+
+        public async Task<bool> DeletaDestinoAsync(int id)
+        {
+            var destiny = await _context.Destinos.Where(x => x.Id == id).FirstOrDefaultAsync();
+
+            if (destiny == default) throw new Exception($"Id {id} inexistente.");
+
+            _context.Destinos.Remove(destiny);
+            await _context.SaveChangesAsync();
+
+            return true;
         }
     }
 }
