@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
+builder.Services.AddScoped<IDestinosRepository, DestinosRepository>();
 
 var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
 

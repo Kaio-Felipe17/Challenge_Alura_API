@@ -45,5 +45,12 @@
             <param name="dto">Objeto para inserção</param>
             <returns></returns>
         </member>
+        <member name="M:API_Alura.Controllers.DestinosController.GetDestino(System.String)">
+            <summary>
+            Retorna um destino.
+            </summary>
+            <param name="nome">Nome do destino</param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

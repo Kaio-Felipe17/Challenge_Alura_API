@@ -2,14 +2,16 @@
 using API_Alura.Application.Models;
 using API_Alura.Infrastructure.Context;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Alura.Core.Repository
 {
     public interface IDestinosRepository
     {
         Task<Destinos> PostDestinosAsync(DestinosPostDTO dto);
+        Task<Destinos?> GetDestinoAsync(string nome);
     }
-    public class DestinosRepository: IDestinosRepository
+    public class DestinosRepository : IDestinosRepository
     {
         private readonly DatabaseContext _context;
         private readonly IMapper _mapper;
@@ -28,6 +30,15 @@ namespace API_Alura.Core.Repository
             await _context.SaveChangesAsync();
 
             return destinoPost;
+        }
+
+        public async Task<Destinos?> GetDestinoAsync(string nome)
+        {
+            var destino = await _context.Destinos.Where(x => x.Nome == nome).FirstOrDefaultAsync();
+
+            if (destino == default) throw new Exception("Nenhum destino foi encontrado");
+
+            return destino;
         }
     }
 }
