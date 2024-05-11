@@ -1,4 +1,5 @@
 ﻿using API_Alura.Application.DTOs.Request;
+using API_Alura.Application.Exceptions;
 using API_Alura.Application.Models;
 using API_Alura.Infrastructure.Context;
 using AutoMapper;
@@ -38,7 +39,7 @@ namespace API_Alura.Core.Repository
         {
             var destino = await _context.Destinos.Where(x => x.Nome == nome).FirstOrDefaultAsync();
 
-            if (destino == default) throw new Exception("Nenhum destino foi encontrado.");
+            if (destino == default) throw new NotFoundException("Nenhum destino foi encontrado.");
 
             return destino;
         }
@@ -47,7 +48,7 @@ namespace API_Alura.Core.Repository
         {
             var destiny = await _context.Destinos.Where(x => x.Id == dto.Id).FirstOrDefaultAsync();
 
-            if (destiny == default) throw new Exception($"Id {dto.Id} inexistente.");
+            if (destiny == default) throw new NotFoundException($"Id {dto.Id} inexistente.");
 
             _mapper.Map(dto, destiny);
             await _context.SaveChangesAsync();
@@ -59,7 +60,7 @@ namespace API_Alura.Core.Repository
         {
             var destiny = await _context.Destinos.Where(x => x.Id == id).FirstOrDefaultAsync();
 
-            if (destiny == default) throw new Exception($"Id {id} inexistente.");
+            if (destiny == default) throw new NotFoundException($"Id {id} inexistente.");
 
             _context.Destinos.Remove(destiny);
             await _context.SaveChangesAsync();

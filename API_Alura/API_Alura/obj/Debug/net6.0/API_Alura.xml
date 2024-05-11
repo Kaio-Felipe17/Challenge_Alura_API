@@ -4,62 +4,62 @@
         <name>API_Alura</name>
     </assembly>
     <members>
-        <member name="M:API_Alura.Controllers.DepoimentosController.PostDepoimentos(API_Alura.Application.DTOs.Request.DepoimentosPostDTO)">
+        <member name="M:API_Alura.Controllers.DepoimentosController.InserirDepoimento(API_Alura.Application.DTOs.Request.InsereDepoimentoRequestDTO)">
             <summary>
             Insere um novo depoimento.
             </summary>
             <param name="depoimento">Objeto para inserção</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DepoimentosController.GetDepoimentos(System.Int32)">
+        <member name="M:API_Alura.Controllers.DepoimentosController.ConsultaDepoimento(System.Int32)">
             <summary>
             Consulta um depoimento.
             </summary>
             <param name="id">Id do depoimento</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DepoimentosController.PutDepoimentos(API_Alura.Application.DTOs.Request.DepoimentosPutDTO)">
+        <member name="M:API_Alura.Controllers.DepoimentosController.AtualizaDepoimento(API_Alura.Application.DTOs.Request.AtualizaDepoimentoRequestDTO)">
             <summary>
             Atualiza um depoimento existente.
             </summary>
             <param name="dto">Objeto para atualização</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DepoimentosController.DeleteDepoimentos(System.Int32)">
+        <member name="M:API_Alura.Controllers.DepoimentosController.DeletaDepoimento(System.Int32)">
             <summary>
             Deleta um depoimento existente.
             </summary>
             <param name="id">Id do depoimento</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DepoimentosController.GetDepoimentosAleatorios">
+        <member name="M:API_Alura.Controllers.DepoimentosController.BuscaDepoimentosAleatorios">
             <summary>
             Retorna 3 depoimentos de forma aleatória.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DestinosController.PostDestinos(API_Alura.Application.DTOs.Request.DestinosPostDTO)">
+        <member name="M:API_Alura.Controllers.DestinosController.InsereDestino(API_Alura.Application.DTOs.Request.InsereDestinoRequestDTO)">
             <summary>
             Insere um novo destino.
             </summary>
             <param name="dto">Objeto para inserção</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DestinosController.GetDestino(System.String)">
+        <member name="M:API_Alura.Controllers.DestinosController.ConsultaDestino(System.String)">
             <summary>
             Consulta um destino.
             </summary>
             <param name="nome">Nome do destino</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DestinosController.PutDestino(API_Alura.Application.DTOs.Request.DestinosPutDTO)">
+        <member name="M:API_Alura.Controllers.DestinosController.AtualizaDestino(API_Alura.Application.DTOs.Request.AtualizaDestinoRequestDTO)">
             <summary>
             Atualiza um destino.
             </summary>
             <param name="dto">Objeto para atualização</param>
             <returns></returns>
         </member>
-        <member name="M:API_Alura.Controllers.DestinosController.DeleteDestino(System.Int32)">
+        <member name="M:API_Alura.Controllers.DestinosController.DeletaDestino(System.Int32)">
             <summary>
             Exclui um destino.
             </summary>

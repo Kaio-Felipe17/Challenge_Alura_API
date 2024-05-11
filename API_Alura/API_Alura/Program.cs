@@ -1,6 +1,8 @@
+using API_Alura;
 using API_Alura.Application.Profile;
 using API_Alura.Core.Repository;
 using API_Alura.Infrastructure.Context;
+using API_Alura.Middleware;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -63,6 +65,8 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseCors("CorsPolicy");
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseAuthorization();
 
