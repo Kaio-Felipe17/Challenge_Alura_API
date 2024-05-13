@@ -18,10 +18,12 @@ namespace API_Alura.Application.Profile
                 .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.ToBase64String(src.Foto)));
 
             CreateMap<InsereDestinoRequestDTO, Destino>()
-                .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto)));
+                .ForMember(dest => dest.Foto1, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto1)))
+                .ForMember(dest => dest.Foto2, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto2)));
 
             CreateMap<AtualizaDestinoRequestDTO, Destino>()
-                .ForMember(dest => dest.Foto, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto)));
+                .ForMember(dest => dest.Foto1, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto1)))
+                .ForMember(dest => dest.Foto2, opt => opt.MapFrom(src => Convert.FromBase64String(src.Foto2)));
         }
     }
 }

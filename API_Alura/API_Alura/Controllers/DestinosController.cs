@@ -23,6 +23,7 @@ namespace API_Alura.Controllers
         /// <param name="dto">Objeto para inserção</param>
         /// <returns></returns>
         [HttpPost("inserirDestino")]
+        [ProducesResponseType(typeof(Destino), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
