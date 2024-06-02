@@ -1,7 +1,7 @@
-using API_Alura;
 using API_Alura.Application.Profile;
 using API_Alura.Core.Repository;
 using API_Alura.Infrastructure.Context;
+using API_Alura.Infrastructure.Services;
 using API_Alura.Middleware;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -9,13 +9,14 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddScoped<IDepoimentosRepository, DepoimentosRepository>();
 builder.Services.AddScoped<IDestinosRepository, DestinosRepository>();
+builder.Services.AddScoped<IOpenAiService, OpenAiService>();
 
-var connectionString = builder.Configuration.GetConnectionString("AluraDatabase");
+var connectionString = builder
+    .Configuration
+    .GetConnectionString("AluraDatabase");
 
 builder.Services
     .AddDbContext<DatabaseContext>(opts => opts
@@ -23,7 +24,7 @@ builder.Services
 
 var mappingConfig = new MapperConfiguration(mc =>
 {
-    mc.AddProfile(new MappingProfiles());
+    mc.AddProfile(new Mappings());
 });
 
 IMapper mapper = mappingConfig.CreateMapper();
@@ -50,6 +51,8 @@ builder.Services.AddSwaggerGen(c =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 });
+
+builder.Configuration["OPENAI_API_KEY"] = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
 var app = builder.Build();
 

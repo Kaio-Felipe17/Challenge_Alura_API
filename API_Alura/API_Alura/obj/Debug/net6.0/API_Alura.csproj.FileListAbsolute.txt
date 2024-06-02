@@ -4,15 +4,6 @@ C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\API_Alura.AssemblyInfo.cs
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\API_Alura.csproj.CoreCompileInputs.cache
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\API_Alura.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Application.deps.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Application.runtimeconfig.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Application.exe
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Core.deps.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Core.runtimeconfig.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Infrastructure.deps.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Infrastructure.runtimeconfig.json
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Infrastructure.exe
-C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.Core.exe
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\appsettings.json
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.exe
@@ -56,3 +47,5 @@ C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\ref\API_Alura.dll
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\API_Alura.xml
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\API_Alura.xml
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\ChatGPT.Net.dll

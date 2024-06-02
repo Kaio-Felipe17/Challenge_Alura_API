@@ -51,6 +51,22 @@ namespace API_Alura.Controllers
         }
 
         /// <summary>
+        /// Consulta um destino por Id.
+        /// </summary>
+        /// <param name="id">Id do destino</param>
+        /// <returns></returns>
+        [HttpGet("destinos")]
+        [ProducesResponseType(typeof(Destino), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<Destino> ConsultaDestinoV2([Required] int id)
+        {
+            var response = await _destinos.ConsultaDestinoV2Async(id);
+
+            return response;
+        }
+
+        /// <summary>
         /// Atualiza um destino.
         /// </summary>
         /// <param name="dto">Objeto para atualização</param>

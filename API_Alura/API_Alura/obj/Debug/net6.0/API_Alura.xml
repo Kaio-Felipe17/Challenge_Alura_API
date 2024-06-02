@@ -52,6 +52,13 @@
             <param name="nome">Nome do destino</param>
             <returns></returns>
         </member>
+        <member name="M:API_Alura.Controllers.DestinosController.ConsultaDestinoV2(System.Int32)">
+            <summary>
+            Consulta um destino por Id.
+            </summary>
+            <param name="id">Id do destino</param>
+            <returns></returns>
+        </member>
         <member name="M:API_Alura.Controllers.DestinosController.AtualizaDestino(API_Alura.Application.DTOs.Request.AtualizaDestinoRequestDTO)">
             <summary>
             Atualiza um destino.
