@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="ChatGPT.Net" Version="2.0.0" />
+    <PackageReference Include="dotenv.net" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.0" />
@@ -16,6 +17,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="OpenAI" Version="1.11.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.0" />
   </ItemGroup>
 

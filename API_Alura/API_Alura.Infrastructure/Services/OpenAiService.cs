@@ -1,6 +1,7 @@
 ﻿using API_Alura.Application.Exceptions;
-using ChatGPT.Net;
-using Microsoft.Extensions.Configuration;
+using dotenv.net;
+using OpenAI_API;
+using OpenAI_API.Completions;
 
 namespace API_Alura.Infrastructure.Services
 {
@@ -10,28 +11,25 @@ namespace API_Alura.Infrastructure.Services
     }
     public class OpenAiService : IOpenAiService
     {
-        private readonly IConfiguration _configuration;
-
-        public OpenAiService(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-
         public async Task<string> CreateChatCompletion(string city)
         {
+            DotEnv.Load();
 
-            var openAiKey = _configuration["OPENAI_API_KEY"] = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
+            var apiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY");
 
-            if (openAiKey == null) throw new NotFoundException("Api Key não encontrada.");
+            if (apiKey == null) throw new NotFoundException("Api Key não encontrada.");
 
-            var openAi = new ChatGpt(openAiKey);
+            var openAi = new OpenAIAPI(apiKey);
 
-            var completion = await openAi
-                .Ask(@$"Give a summary of {city}, emphasizing why this place is incredible. 
-                    Use informal language and up to 100 characters maximum in each paragraph. 
-                    Create 2 paragraphs in this summary. Translate to Brazilian Portuguese.");
+            var result = await openAi.Completions.CreateCompletionAsync(new CompletionRequest
+            {
+                Prompt = @$"Dê um resumo de {city}, enfatizando por que este lugar é incrível. 
+                            Use linguagem informal e até 100 caracteres no máximo em cada parágrafo. 
+                            Crie 2 parágrafos neste resumo.",
+                MaxTokens = 200
+            });
 
-            return completion;
+            return result.Completions[0].Text.Trim();
         }
     }
 }

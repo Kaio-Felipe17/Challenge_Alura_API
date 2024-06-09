@@ -49,3 +49,6 @@ C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\obj\Debug\net6.0\API_Alura.xml
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\ChatGPT.Net.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\dotenv.net.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kaio0\OneDrive\Desktop\projetos\Challenge_Alura_API\API_Alura\API_Alura\bin\Debug\net6.0\OpenAI_API.dll
